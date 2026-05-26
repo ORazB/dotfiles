@@ -1,0 +1,123 @@
+# matugen theme for yazi
+
+[manager]
+cwd = { fg = "#debbe7" }
+
+# Hovered
+hovered = { reversed = true }
+preview_hovered = { underline = true }
+
+# Find
+find_keyword = { fg = "#f9b4c1", bold = true, italic = true }
+find_position = { fg = "#e8e1e4", bg = "reset", bold = true, italic = true }
+
+# Marker
+marker_copied = { fg = "#f9b4c1", bg = "#f9b4c1" }
+marker_cut = { fg = "#ffb4ab", bg = "#ffb4ab" }
+marker_marked = { fg = "#d3c1d5", bg = "#d3c1d5" }
+marker_selected = { fg = "#debbe7", bg = "#debbe7" }
+
+# Tab
+tab_active = { fg = "#e8e1e4", bg = "#221f22" }
+tab_inactive = { fg = "#cec3cd", bg = "#1d1b1d" }
+tab_width = 1
+
+# Count
+count_copied = { fg = "#000000", bg = "#bd808c" }
+count_cut = { fg = "#ffdad6", bg = "#93000a" }
+count_selected = { fg = "#000000", bg = "#a586af" }
+
+# Border
+border_symbol = "│"
+border_style = { fg = "#978e97" }
+
+# Highlighting
+syntect_theme = ""
+
+[status]
+separator_open = ""
+separator_close = ""
+separator_style = { fg = "#978e97", bg = "#978e97" }
+
+# Mode
+mode_normal = { fg = "#40264a", bg = "#debbe7", bold = true }
+mode_select = { fg = "#382c3c", bg = "#d3c1d5", bold = true }
+mode_unset = { fg = "#4f222d", bg = "#f9b4c1", bold = true }
+
+# Progress
+progress_label = { fg = "#e8e1e4", bold = true }
+progress_normal = { fg = "#debbe7", bg = "#221f22" }
+progress_error = { fg = "#ffb4ab", bg = "#221f22" }
+
+# Permissions
+permissions_t = { fg = "#f9b4c1" }
+permissions_r = { fg = "#debbe7" }
+permissions_w = { fg = "#d3c1d5" }
+permissions_x = { fg = "#f9b4c1" }
+permissions_s = { fg = "#cec3cd" }
+
+[select]
+border = { fg = "#debbe7" }
+active = { fg = "#000000", bg = "#a586af" }
+inactive = { fg = "#e8e1e4" }
+
+[input]
+border = { fg = "#debbe7" }
+title = { fg = "#e8e1e4" }
+value = { fg = "#e8e1e4" }
+selected = { reversed = true }
+
+[completion]
+border = { fg = "#debbe7" }
+active = { fg = "#000000", bg = "#a586af" }
+inactive = { fg = "#e8e1e4" }
+
+# Icons
+icon_file = ""
+icon_folder = ""
+icon_command = ""
+
+[tasks]
+border = { fg = "#debbe7" }
+title = { fg = "#e8e1e4" }
+hovered = { fg = "#000000", bg = "#a586af" }
+
+[which]
+cols = 3
+mask = { bg = "#151315" }
+cand = { fg = "#e8e1e4" }
+rest = { fg = "#cec3cd" }
+desc = { fg = "#cec3cd" }
+separator = "  "
+separator_style = { fg = "#4b444c" }
+
+[help]
+on = { fg = "#f9b4c1" }
+run = { fg = "#d3c1d5" }
+hovered = { reversed = true }
+footer = { fg = "#e8e1e4", bg = "#1d1b1d" }
+
+[filetype]
+rules = [
+    # Images
+    { mime = "image/*", fg = "#d3c1d5" },
+
+    # Media
+    { mime = "video/*", fg = "#f9b4c1" },
+    { mime = "audio/*", fg = "#f9b4c1" },
+
+    # Archives
+    { mime = "application/*zip", fg = "#ffb4ab" },
+    { mime = "application/x-tar", fg = "#ffb4ab" },
+    { mime = "application/x-bzip*", fg = "#ffb4ab" },
+    { mime = "application/x-7z-compressed", fg = "#ffb4ab" },
+    { mime = "application/x-rar", fg = "#ffb4ab" },
+    { mime = "application/x-xz", fg = "#ffb4ab" },
+
+    # Documents
+    { mime = "application/pdf", fg = "#debbe7" },
+
+    # Fallback
+    { name = "*", fg = "#e8e1e4" },
+    { name = "*/", fg = "#debbe7" }
+]

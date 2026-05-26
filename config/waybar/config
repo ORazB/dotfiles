@@ -1,0 +1,138 @@
+{
+	"layer":"top",
+	"position":"top",
+	"reload_style_on_change":true,
+		
+	"height":20,
+  "margin-top": 5,
+	"margin-left": 5,
+	"margin-right":5,
+	
+	"modules-left":[
+    "hyprland/workspaces",
+    "custom/crypto",
+  ],
+"modules-center": [
+    "battery",
+		"clock#time",
+    "backlight",
+],
+	"modules-right":[
+		"custom/notification",
+		"network",
+		"wireplumber",
+    "cpu",
+    "memory",
+    "hyprland/language",
+    "tray",
+		"custom/power"
+		],
+		
+		"hyprland/workspaces": {
+		    "all-outputs": true,
+		    "format": "{icon}",
+		    "format-icons": {
+		        "1": "一",
+		        "2": "二",
+		        "3": "三",
+		        "4": "四",
+		        "5": "五",
+		        "6": "六",
+		        "7": "七",
+		        "8": "八",
+		        "9": "九",
+		        "10": "十"
+		    },
+		    "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
+		    "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
+		    "sort-by-number": true,
+		    "active-only": false,
+    },
+	
+	"wireplumber": {
+		    "on-click": "pavucontrol",
+		    "on-click-right": "amixer sset Master toggle 1>/dev/null",
+		    "format": "{icon}  {volume}%",
+		    "format-muted": "  Muted",
+		    "format-icons": {
+		        "headphone": " ",
+		        "hands-free": " ",
+		        "headset": " ",
+		        "phone": " ",
+		        "portable": " ",
+		        "car": " ",
+		        "default": [" ", " ", " "]
+		    },
+		},
+        
+    "network": {
+        "format-wifi": "   {essid}  ",
+        "format-ethernet": "   {ifname}",
+        "format-linked": "  {ifname} (No IP)",
+        "format": "  Connected",
+        "format-disconnected": "  Disconnected",
+        "interval": 60,
+        "on-click": "nm-connection-editor"
+    },
+    "clock#time": {
+        "format": "{:%H:%M  %a}",
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        // START CLOCK FORMAT
+        "format-alt": "{:%d.%m.%Y}"
+        // END CLOCK FORMAT
+    },
+    "custom/power":{
+    	"format":"󰐥",
+      "on-click": "wlogout -b 6 -c 16 -r 0 -T 450 -B 450 -L 200 -R 200",
+    },
+    "custom/notification":{
+    	"format": "󱅫",
+    	"on-click": "swaync-client -t -sw"
+    },
+
+    "cpu": {
+        "format": "󰍛 {usage}%",
+        "on-click": "kitty -e btop"
+    },
+
+    "memory": {
+        "format": " {}%",
+        "on-click": "kitty -e btop"
+    },
+
+    "hyprland/language": {
+        "format": "󰌌 {short}"
+    },
+
+    "custom/crypto": {
+        "format": "{}",
+        "interval": 600,
+        "return-type": "json",
+        "exec": "waybar-crypto",
+        "exec-if": "command -v waybar-crypto",
+        "on-click": "xdg-open https://coinmarketcap.com/"
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "battery": {
+      "bat": "BATT",
+      "adapter": "ACAD",
+      "interval": 30,
+      "format": "{capacity}% ",
+      "format-charging": "{capacity}% ",
+      "format-plugged": "{capacity}% ",
+      "format-alt": "{time} {capacity}%",
+      "tooltip": true,
+      "tooltip-format": "Remaining: {time}"
+    },
+    "backlight": {
+      "device": "amdgpu_bl1",
+      "format": "󰃟 {percent}%",
+        "on-scroll-up":"brightnessctl set +1%",
+        "on-scroll-down":"brightnessctl set 1%-"
+    },
+
+}
