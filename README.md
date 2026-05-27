@@ -57,6 +57,12 @@ Customized from community dotfiles with personal tweaks, fixes, and added featur
 | `starship` | Zsh prompt |
 | `fastfetch` | System info |
 
+### OSD
+
+| Package | Purpose |
+|---|---|
+| `swayosd` | On-screen volume/brightness/lock overlay |
+
 ### Appearance
 
 | Package | Purpose |
