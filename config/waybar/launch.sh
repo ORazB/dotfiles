@@ -1,40 +1,41 @@
 #!/bin/bash
 
-# Check if waybar-disabled file exists
-if [ -f $HOME/.cache/waybar-disabled ]; then
-    killall waybar
+if [ -f "$HOME/.cache/waybar-disabled" ]; then
     pkill waybar
     pkill cava
     exit 1
 fi
 
-# Quit all running waybar instances and related processes
-killall waybar
 pkill waybar
 pkill cava
 sleep 0.2
 
-# Check if battery exists (laptop detection)
-CHASSIS_TYPE=$(cat /sys/class/dmi/id/chassis_type)
-if [ "$CHASSIS_TYPE" == "10" ]; then
-    HAS_BATTERY=true
-else
-    HAS_BATTERY=false
-fi
+CHASSIS_TYPE=$(cat /sys/class/dmi/id/chassis_type 2>/dev/null)
+HAS_BATTERY=false
+[ "$CHASSIS_TYPE" = "10" ] && HAS_BATTERY=true
 
-# Generate config based on battery presence
 CONFIG_FILE="$HOME/.config/waybar/config"
+TMP_CONFIG="/tmp/waybar-config-temp.json"
+STYLE_FILE="$HOME/.config/waybar/style.css"
 
-if [ "$HAS_BATTERY" = false ]; then
-    # Desktop: remove laptop modules, keep desktop modules
-    sed -e 's/"battery",//g' \
-        -e 's/"backlight",//g' \
-        "$CONFIG_FILE" > /tmp/waybar-config-temp.json
-    waybar -c /tmp/waybar-config-temp.json -s ~/.config/waybar/style.css &
-else
-    # Laptop: remove desktop modules, keep laptop modules
-    sed -e 's/"cpu",//g' \
-        -e 's/"memory",//g' \
-        "$CONFIG_FILE" > /tmp/waybar-config-temp.json
-    waybar -c /tmp/waybar-config-temp.json -s ~/.config/waybar/style.css &
-fi
+python3 <<EOF > "$TMP_CONFIG"
+import json, re, os, sys
+
+with open(os.path.expanduser("$CONFIG_FILE")) as f:
+    raw = f.read()
+
+raw = re.sub(r'^\s*//.*', '', raw, flags=re.MULTILINE)
+raw = re.sub(r',\s*([\]}])', r'\1', raw)
+config = json.loads(raw)
+
+has_battery = ${HAS_BATTERY^}
+
+if has_battery:
+    config["modules-right"] = [m for m in config["modules-right"] if m not in ("cpu", "memory")]
+else:
+    config["modules-center"] = [m for m in config["modules-center"] if m not in ("battery", "backlight")]
+
+json.dump(config, sys.stdout, indent=4)
+EOF
+
+exec waybar -c "$TMP_CONFIG" -s "$STYLE_FILE"

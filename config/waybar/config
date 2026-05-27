@@ -4,7 +4,9 @@
 	"reload_style_on_change":true,
 		
 	"height":20,
-  "margin-top": 5,
+	"margin-top": 5,
+	"on-sigusr1": "hide",
+	"on-sigusr2": "show",
 	"margin-left": 5,
 	"margin-right":5,
 	
@@ -118,8 +120,8 @@
         "spacing": 10
     },
     "battery": {
-      "bat": "BATT",
-      "adapter": "ACAD",
+      "bat": "BAT0",
+      "adapter": "AC0",
       "interval": 30,
       "format": "{capacity}% ",
       "format-charging": "{capacity}% ",

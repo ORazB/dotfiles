@@ -49,16 +49,15 @@ hl.bind(mainMod .. " + grave", hl.dsp.workspace.toggle_special("dropdown"))
 hl.bind(mainMod .. " + SHIFT + grave", hl.dsp.window.move({ workspace = "special:dropdown" }))
 
 -- Actions
-if home then
-    hl.bind("ALT + C", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/screenshot_claude.sh"))
-    hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("kitty --listen-on unix:/tmp/kitty-claude -e claude"))
-    hl.bind("PRINT", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/screenshot.sh"))
-    hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/screenshot.sh area"))
-    hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/wallpaper.sh scheme"))
-    hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/wallpaper.sh select"))
-    hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(home .. "/.config/waybar/launch.sh"))
-    hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/cliphist.sh"))
-end
+hl.bind("ALT + C", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/screenshot_claude.sh"))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("kitty --listen-on unix:/tmp/kitty-claude -e claude"))
+hl.bind("PRINT", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/screenshot.sh"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/screenshot.sh area"))
+hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/wallpaper.sh scheme"))
+hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/wallpaper.sh select"))
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(home .. "/.config/waybar/launch.sh"))
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/cliphist.sh"))
+hl.bind("XF86Tools", hl.dsp.exec_cmd("alacritty --class dotfiles-floating -e " .. home .. "/.config/hypr/settings/settings.sh"))
 hl.bind(mainMod .. " + CTRL + Q", hl.dsp.exec_cmd("wlogout -b 6 -c 16 -r 0 -T 450 -B 450 -L 200 -R 200"))
 hl.bind("ALT + SPACE", hl.dsp.exec_cmd("rofi -show drun -replace -i"))
 
@@ -76,9 +75,6 @@ hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("pactl set-source-mute @DEFAULT_SOUR
 hl.bind("XF86Calculator", hl.dsp.exec_cmd("qalculate-gtk"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind("XF86ScreenSaver", hl.dsp.exec_cmd("hyprlock"))
-if home then
-    hl.bind("XF86Tools", hl.dsp.exec_cmd("alacritty --class dotfiles-floating -e " .. home .. "/.config/hypr/settings/settings.sh"))
-end
 
 -- Passthrough submap
 hl.bind(mainMod .. " + P", hl.dsp.submap("passthru"))
