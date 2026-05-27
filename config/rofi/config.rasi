@@ -17,7 +17,6 @@ configuration {
 }
 
 @import "~/.cache/colors-rofi.rasi"
-@import "~/.cache/current_banner.rasi"
 @import "~/.config/rofi/border.rasi"
 
 window {
@@ -51,7 +50,7 @@ banner {
     padding: 0px;
     margin: 0px 0px 4px 0px;
     background-color: transparent;
-    background-image: @banner-image;
+    background-image: url("assets/search.jpg", height);
     border-radius: 6px;
     orientation: vertical;
     children: [];

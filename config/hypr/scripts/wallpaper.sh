@@ -24,7 +24,6 @@ fi
 if [ ! -f $rasi_file ] ;then
     touch $rasi_file
     echo "* { current-image: url(\"$HOME/wallpaper/default.jpg\", height); }" > "$rasi_file"
-    echo "* { banner-image: url(\"$HOME/wallpaper/default.jpg\", width); }" > "$HOME/.cache/current_banner.rasi"
 fi
 
 current_wallpaper=$(cat "$cache_file")
@@ -219,7 +218,6 @@ fi
 # -----------------------------------------------------
 echo "$wallpaper" > "$cache_file"
 echo "* { current-image: url(\"$blurred\", height); }" > "$rasi_file"
-echo "* { banner-image: url(\"$wallpaper\", width); }" > "$HOME/.cache/current_banner.rasi"
 
 # -----------------------------------------------------
 # Send notification
