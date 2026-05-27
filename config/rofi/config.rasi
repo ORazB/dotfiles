@@ -1,6 +1,6 @@
 /*
- * Main application launcher
- * 900px wide, centered, with icons
+ * Main application launcher — compact, keyboard-first
+ * 480px wide, minimal padding, no wallpaper sidebar
  */
 
 configuration {
@@ -8,50 +8,117 @@ configuration {
     font: "Fira Sans 12";
     show-icons: true;
     icon-theme: "kora";
-    display-drun: "APPS";
-    display-run: "RUN";
-    display-filebrowser: "FILES";
-    display-window: "WINDOW";
+    icon-size: 24;
+    display-drun: "";
+    display-run: "";
     drun-display-format: "{name}";
-    hover-select: true;
-    me-select-entry: "";
-    me-accept-entry: "MousePrimary";
     window-format: "{w} · {c} · {t}";
+    matching: fuzzy;
+    disable-history: true;
 }
 
 @import "~/.cache/colors-rofi.rasi"
-@import "~/.cache/current_wallpaper.rasi"
 @import "~/.config/rofi/border.rasi"
 
-@import "~/.config/rofi/common.rasi"
 window {
-    width: 900px;
+    width: 480px;
     x-offset: 0px;
-    y-offset: 0px;
+    y-offset: -100px;
     location: center;
     anchor: center;
+    border-radius: 12px;
+    padding: 0px;
+    background-color: @background;
+    enabled: true;
+    spacing: 0px;
+    margin: 0px;
+    transparency: "real";
+    cursor: "default";
+    fullscreen: false;
 }
 
 mainbox {
-    children: ["imagebox", "listbox"];
-}
-
-imagebox {
-    padding: 10px;
-    background-image: @current-image;
-    orientation: vertical;
-    children: ["inputbar", "dummy", "mode-switcher"];
-}
-
-listbox {
-    spacing: 10px;
-    padding: 0px 0px 0px 6px;
+    enabled: true;
+    spacing: 0px;
+    padding: 6px;
     background-color: transparent;
-    orientation: vertical;
-    children: ["message", "listview"];
+    children: ["inputbar", "listview"];
+}
+
+inputbar {
+    enabled: true;
+    spacing: 8px;
+    padding: 10px 14px;
+    margin: 0px 0px 4px 0px;
+    border-radius: 8px;
+    background-color: @background-alt;
+    text-color: @foreground;
+    children: ["textbox-prompt-colon", "entry"];
+}
+
+textbox-prompt-colon {
+    str: "";
+    expand: false;
+    padding: 0px;
+    background-color: transparent;
+    text-color: @color11;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @foreground;
+    cursor: text;
+    placeholder: "";
+    placeholder-color: @foreground;
 }
 
 listview {
+    enabled: true;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    spacing: 2px;
+    padding: 0px;
+    margin: 0px;
     columns: 1;
-    lines: 8;
+    lines: 6;
+    background-color: transparent;
+    border: 0px;
+}
+
+element {
+    enabled: true;
+    padding: 8px 12px;
+    margin: 0px;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 6px;
+    border: 0px;
+    text-color: @foreground;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+element selected.normal {
+    background-color: @color11;
+    text-color: @onactive;
+}
+
+element-icon {
+    background-color: transparent;
+    text-color: inherit;
+    size: 24px;
+    cursor: inherit;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
 }
