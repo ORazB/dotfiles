@@ -67,7 +67,7 @@ Customized from community dotfiles with personal tweaks, fixes, and added featur
 
 | Package | Purpose |
 |---|---|
-| `matugen` | Material You color generation from wallpaper |
+| `matugen` | Material color generation from wallpaper |
 | `gtk3` `gtk4` | GTK toolkits |
 | `ttf-firacode-nerd` | Monospace font (kitty, terminal) |
 | `python` | Config generation scripts |
