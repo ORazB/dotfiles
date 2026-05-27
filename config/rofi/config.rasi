@@ -17,7 +17,7 @@ configuration {
 }
 
 @import "~/.cache/colors-rofi.rasi"
-@import "~/.cache/current_wallpaper.rasi"
+@import "~/.cache/current_banner.rasi"
 @import "~/.config/rofi/border.rasi"
 
 window {
@@ -26,8 +26,9 @@ window {
     y-offset: -100px;
     location: center;
     anchor: center;
-    padding: 0px;
-    background-color: transparent;
+    padding: 6px;
+    background-color: @background;
+    border-radius: 10px;
     enabled: true;
     spacing: 0px;
     margin: 0px;
@@ -39,9 +40,8 @@ window {
 mainbox {
     enabled: true;
     spacing: 0px;
-    padding: 6px;
-    background-color: @background;
-    border-radius: 8px;
+    padding: 0px;
+    background-color: transparent;
     children: ["banner", "inputbar", "listview"];
 }
 
@@ -50,12 +50,12 @@ banner {
     spacing: 0px;
     padding: 0px;
     margin: 0px 0px 4px 0px;
-    background-color: @background-alt;
-    background-image: @current-image;
-    border-radius: 6px 6px 0px 0px;
+    background-color: transparent;
+    background-image: @banner-image;
+    border-radius: 6px;
     orientation: vertical;
     children: [];
-    min-height: 60px;
+    min-height: 56px;
 }
 
 inputbar {
