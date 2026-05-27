@@ -12,6 +12,7 @@ Customized from community dotfiles with personal tweaks, fixes, and added featur
     ├── gtk-3.0/     # GTK3 theme settings
     ├── gtk-4.0/     # GTK4 theme settings
     ├── hypr/        # Hyprland WM config, keybinds, scripts
+    ├── hyprlock/    # Lock screen
     ├── kitty/       # Terminal emulator
     ├── matugen/     # Material You color generator templates
     ├── nvim/        # Neovim (lazy.nvim)
@@ -21,7 +22,8 @@ Customized from community dotfiles with personal tweaks, fixes, and added featur
     ├── swaync/      # Notification daemon
     ├── waybar/      # Status bar
     ├── wlogout/     # Logout/power menu
-    └── yazi/        # File manager (TUI)
+    ├── zed/         # Zed editor
+    └── systemd/     # Systemd user services
 ```
 
 > [!CAUTION]
