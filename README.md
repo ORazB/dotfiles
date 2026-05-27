@@ -1,4 +1,4 @@
-# Astral
+# Evernight
 My first Hyprland rice on Arch Linux.
 Customized from community dotfiles with personal tweaks, fixes, and added features.
 
