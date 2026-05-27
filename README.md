@@ -1,6 +1,6 @@
 # Astral
 
-Hyprland dotfiles on Arch Linux.
+Customized Hyprland setup on Arch Linux.
 
 ## Structure
 
