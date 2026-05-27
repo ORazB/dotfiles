@@ -117,7 +117,7 @@ newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 # ----------------------------------------------------- 
 # Reload waybar with new colors
 # -----------------------------------------------------
-~/.config/waybar/launch.sh
+setsid ~/.config/waybar/launch.sh > /dev/null 2>&1 &
 
 # -----------------------------------------------------
 # Set the new wallpaper
