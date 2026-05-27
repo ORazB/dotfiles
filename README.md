@@ -25,7 +25,7 @@ Customized from community dotfiles with personal tweaks, fixes, and added featur
 ```
 
 > [!CAUTION]
-> This is my first rice. The package list may include unused or redundant entries, and some configs may have leftover clutter from the original dotfiles I based this on. Use your own judgment before installing everything blindly.
+> This is my first rice. The package list may include unused or redundant entries, and some configs may have leftover clutter from the original dotfiles I based this on. Use your own judgment before installing everything blindly. That said, I am actively working on this and plan to make it completely my own over time.
 
 ## Packages
 ### Core
