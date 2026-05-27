@@ -50,8 +50,10 @@ Hyprland dotfiles on Arch Linux.
 
 | Package | Purpose |
 |---|---|
-| `zsh` | Shell |
-| `starship` | Prompt |
+| `fish` | Main shell |
+| `tide` | Fish prompt |
+| `zsh` | Secondary shell |
+| `starship` | Zsh prompt |
 | `zoxide` | Smarter `cd` |
 | `zsh-autosuggestions` | Fish-like autosuggestions |
 | `zsh-syntax-highlighting` | Syntax highlighting |
@@ -117,26 +119,4 @@ Hyprland dotfiles on Arch Linux.
 |---|---|
 | `firefox` | Browser |
 | `nautilus` | File manager (GUI) |
-| `claude-code` | Claude Code TUI (custom keybind) |
-| `qalculate-gtk` | Calculator (XF86Calculator) |
 
-## Setup
-
-```bash
-# Clone
-git clone git@github.com:ORazB/dotfiles.git ~/dotfiles
-
-# Copy configs (or symlink with stow)
-cp -r ~/dotfiles/config/* ~/.config/
-cp ~/dotfiles/home/.zshrc ~/
-
-# Install dependencies (Arch)
-sudo pacman -S hyprland waybar wlogout rofi-lbonn-wayland kitty sddm \
-  zsh starship zoxide fastfetch yazi btop grim slurp swappy \
-  wl-clipboard jq pipewire wireplumber pavucontrol playerctl \
-  brightnessctl cava imagemagick polkit-gnome git neovim \
-  nwg-look ttf-firacode-nerd python
-
-# AUR
-yay -S matugen swaync hypridle hyprlock hyprpaper swww
-```
