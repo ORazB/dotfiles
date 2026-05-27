@@ -8,6 +8,7 @@ fi
 
 pkill waybar
 pkill cava
+pkill -f waybar_auto_hide 2>/dev/null
 sleep 0.2
 
 CHASSIS_TYPE=$(cat /sys/class/dmi/id/chassis_type 2>/dev/null)
@@ -38,4 +39,11 @@ else:
 json.dump(config, sys.stdout, indent=4)
 EOF
 
-exec waybar -c "$TMP_CONFIG" -s "$STYLE_FILE"
+waybar -c "$TMP_CONFIG" -s "$STYLE_FILE" &
+WAYBAR_PID=$!
+
+# Start auto-hide after waybar is ready
+sleep 0.5
+"$HOME/.config/hypr/scripts/waybar_auto_hide" &
+
+wait $WAYBAR_PID
