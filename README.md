@@ -36,6 +36,7 @@ Customized Hyprland setup on Arch Linux.
 | Package | Purpose |
 |---|---|
 | `hyprland` | Wayland compositor |
+| `hypridle` | Idle daemon |
 | `hyprlock` | Lock screen |
 | `waybar` | Status bar |
 | `wlogout` | Logout/power menu |
