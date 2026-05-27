@@ -114,11 +114,6 @@ matugen image "$wallpaper" --type "scheme-$scheme_type" --prefer saturation
 # ----------------------------------------------------- 
 newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 
-# ----------------------------------------------------- 
-# Reload waybar with new colors
-# -----------------------------------------------------
-setsid ~/.config/waybar/launch.sh > /dev/null 2>&1 &
-
 # -----------------------------------------------------
 # Set the new wallpaper
 # -----------------------------------------------------
@@ -156,6 +151,11 @@ EOF
 else
     echo ":: Wallpaper Engine disabled"
 fi
+
+# ----------------------------------------------------- 
+# Reload waybar with new colors
+# -----------------------------------------------------
+setsid ~/.config/waybar/launch.sh > /dev/null 2>&1 &
 
 if [ "$1" == "init" ] ;then
     echo ":: Init"
