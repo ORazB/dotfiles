@@ -1,0 +1,11 @@
+[Unit]
+Description=Waybar Auto Hide
+After=graphical-session.target
+BindsTo=graphical-session.target
+
+[Service]
+ExecStart=/home/keita/.config/hypr/scripts/waybar_auto_hide
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

@@ -75,21 +75,50 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "${HOME}/.zsh/cache"
 
 # =====================================================
-# Load dotfiles modules
+# Aliases
 # =====================================================
 
-DOTFILES_SHELL="${HOME}/.config/zsh/shell"
+# System
+alias update='sudo pacman -Syu'
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq) 2>/dev/null || echo "No orphans to remove"'
+alias ls='ls --color=auto'
+alias ll='ls -lah'
+alias la='ls -A'
+alias grep='grep --color=auto'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log --oneline --graph'
+alias hypr-reload='hyprctl reload'
+alias hypr-restart='killall waybar && waybar &'
+alias dcup='docker-compose up -d --build'
+alias dcdn='docker-compose down'
+alias dclg='docker-compose logs -f'
+alias v='nvim'
 
-# Load modules in order (plugins last for syntax highlighting)
-for module in path wayland conda aliases plugins; do
-    if [[ -f "${DOTFILES_SHELL}/${module}.zsh" ]]; then
-        source "${DOTFILES_SHELL}/${module}.zsh"
-    fi
-done
+# =====================================================
+# PATH
+# =====================================================
 
-# Load environment (optional, for scripts)
-if [[ -f "${HOME}/.config/zsh/env.sh" ]]; then
-    source "${HOME}/.config/zsh/env.sh"
+[[ -d "${HOME}/.cargo/bin" ]] && export PATH="${HOME}/.cargo/bin:${PATH}"
+command -v go >/dev/null 2>&1 && export PATH="${PATH}:$(go env GOPATH)/bin"
+[[ -d "${HOME}/.spicetify" ]] && export PATH="${PATH}:${HOME}/.spicetify"
+[[ -d "${HOME}/.local/bin" ]] && export PATH="${HOME}/.local/bin:${PATH}"
+
+# =====================================================
+# Wayland
+# =====================================================
+
+if [[ "${XDG_SESSION_TYPE}" == "wayland" ]] || [[ -n "${WAYLAND_DISPLAY}" ]]; then
+    export ELECTRON_OZONE_PLATFORM_HINT=wayland
+    export QT_QPA_PLATFORM=wayland
+    export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+    export MOZ_ENABLE_WAYLAND=1
+    export GDK_BACKEND=wayland
 fi
 
 # =====================================================
