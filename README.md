@@ -24,6 +24,9 @@ Customized from community dotfiles with personal tweaks, fixes, and added featur
     └── yazi/        # File manager (TUI)
 ```
 
+> [!CAUTION]
+> This is my first rice. The package list may include unused or redundant entries, and some configs may have leftover clutter from the original dotfiles I based this on. Use your own judgment before installing everything blindly.
+
 ## Packages
 ### Core
 | Package | Purpose |
