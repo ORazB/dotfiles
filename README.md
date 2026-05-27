@@ -54,7 +54,6 @@ Hyprland dotfiles on Arch Linux.
 | `tide` | Fish prompt |
 | `zsh` | Secondary shell |
 | `starship` | Zsh prompt |
-| `zoxide` | Smarter `cd` |
 | `zsh-autosuggestions` | Fish-like autosuggestions |
 | `zsh-syntax-highlighting` | Syntax highlighting |
 | `zsh-history-substring-search` | History search |
