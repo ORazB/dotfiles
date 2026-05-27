@@ -8,12 +8,11 @@ configuration {
     font: "Fira Sans 12";
     show-icons: true;
     icon-theme: "kora";
-    icon-size: 24;
     display-drun: "";
     display-run: "";
     drun-display-format: "{name}";
     window-format: "{w} · {c} · {t}";
-    matching: fuzzy;
+    matching: "fuzzy";
     disable-history: true;
 }
 
