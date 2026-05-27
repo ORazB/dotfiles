@@ -73,7 +73,7 @@ textbox-prompt-colon {
     expand: false;
     padding: 0px;
     background-color: transparent;
-    text-color: @color11;
+    text-color: @color4;
 }
 
 entry {
@@ -121,8 +121,8 @@ element alternate.normal {
 }
 
 element selected.normal {
-    background-color: @color11;
-    text-color: @onactive;
+    background-color: @selected;
+    text-color: @onselected;
 }
 
 element-icon {
