@@ -3,6 +3,10 @@
     <img src="https://i.pinimg.com/736x/fc/2a/65/fc2a65afa69b41826b7f7c411e0faa00.jpg" width="250px" height="250px">
     <p>My first Hyprland rice on Arch Linux.</p>
     <p>Customized from community dotfiles with personal tweaks, fixes, and added features.</p>
+    <br>
+    <img src="https://img.shields.io/badge/status-work%20in%20progress-yellow?style=flat-square">
+    <img src="https://img.shields.io/badge/install%20guide-coming%20soon-blue?style=flat-square">
+    <img src="https://img.shields.io/badge/screenshots-coming%20soon-purple?style=flat-square">
 </div>
 
 ## Structure
@@ -31,6 +35,9 @@
 
 > [!CAUTION]
 > This is my first rice. The package list may include unused or redundant entries, and some configs may have leftover clutter from the original dotfiles I based this on. Use your own judgment before installing everything blindly. That said, I am actively working on this and plan to make it completely my own over time.
+
+> [!NOTE]
+> Screenshots, workflow overview, and installation guide are coming soon. This rice is still a work in progress.
 
 ## Packages
 ### Core
