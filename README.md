@@ -1,6 +1,9 @@
-# Evernight
-My first Hyprland rice on Arch Linux.
-Customized from community dotfiles with personal tweaks, fixes, and added features.
+<div align="center">
+    <h1>I call this, Evernight</h1>
+    <img src="https://i.pinimg.com/736x/fc/2a/65/fc2a65afa69b41826b7f7c411e0faa00.jpg" width="250px" height="250px">
+    <p>My first Hyprland rice on Arch Linux.</p>
+    <p>Customized from community dotfiles with personal tweaks, fixes, and added features.</p>
+</div>
 
 ## Structure
 ```
